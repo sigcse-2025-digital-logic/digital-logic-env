@@ -15,21 +15,20 @@
 #   A type of "edit" can be used to open the file in code.
 
 
-# label="4.11 Edit fulladder.sv" type=".edit"
+# label="X1.11 Edit fulladder.sv" type=".edit"
 fulladder.sv.edit:
 
 
-# label="4.12 Simulate fulladder.sv"
+# label="X1.12 Simulate fulladder.sv"
 products/fulladder.rtl.json: \
 	fulladder.sv \
 
-# label="4.13 fulladder testbench verification"
+# label="X1.13 fulladder testbench verification"
 products/fulladder_tb.vcd: \
 	fulladder.sv \
 	fulladder_tb.sv
 
-
-# label="4.17 fulladder AIG"
+# label="X1.17 fulladder AIG"
 products/fulladder.aig.jpg: \
 	fulladder.sv \
 

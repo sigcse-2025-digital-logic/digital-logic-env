@@ -18,25 +18,27 @@
 #   The attribute "hide" can be set to true (hide="true"), but this is not currently supported by all Task extensions
 
 
-# label="1.01 Edit simple_comb.sv" type=".edit"
+# label="01.01 Edit simple_comb.sv" type=".edit"
 simple_comb.sv.edit:
 
-# label="1.02 Simulate simple_comb.sv"
+# label="01.02 Simulate simple_comb.sv"
 products/simple_comb.rtl.json: \
 	simple_comb.sv \
 
-# label="1.03 simple_comb testbench verification"
+# label="01.03 simple_comb testbench verification"
 products/simple_comb_tb.vcd: \
 	simple_comb.sv \
 	simple_comb_tb.sv
 
-# # label="1.04 AIG Mapping"
-# products/simple_comb.aig.jpg: \
-# 	simple_comb.sv \
 
-# label="1.04 ice40 Bitstream"
+# label="01.04 ice40 Bitstream"
 products/simple_comb.bin: \
 	simple_comb.sv \
 	top.sv \
 	ledandkey.sv \
 	pins.pcf
+
+
+# # label="01.05 AIG Mapping"
+# products/simple_comb.aig.jpg: \
+# 	simple_comb.sv \

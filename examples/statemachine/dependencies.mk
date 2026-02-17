@@ -7,25 +7,25 @@
 #    *.vcd:  Value Change Dump (signal trace)
 #
 
-# label="4.1 Edit statemachine.sv" type=".edit"
+# label="02.01 Edit statemachine.sv" type=".edit"
 statemachine.sv.edit:
 
 
 
-# label="4.2 Simulate statemachine.sv"
+# label="02.02 Simulate statemachine.sv"
 statemachine.rtl.json: \
 	statemachine.sv
 
-# label="4.3 Edit statemachine_tb.sv" type=".edit"
+# label="02.03 Edit statemachine_tb.sv" type=".edit"
 statemachine_tb.sv.edit:
 
-# label="4.4 statemachine testbench verification"
+# label="02.04 statemachine testbench verification"
 statemachine_tb.vcd: \
 	statemachine.sv \
 	statemachine_tb.sv
 
 
-# label="4.5 statemachine iCE40 bitstream"
+# label="02.05 statemachine iCE40 bitstream"
 products/statemachine.bin: \
 	statemachine.sv \
 	top.sv \

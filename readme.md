@@ -87,3 +87,10 @@ Be sure to enter a commit message!
 * [Wiring](https://wustl-cse260m-fl24.github.io/studios/7/SwitchesRGB_bb.png)
 * [Studio / Wiring](https://wustl-cse260m-fl24.github.io/studios/studio07b)
 
+
+
+
+ // !  Alert:  Complete the code for a full adder (behavioral model!)
+    // ? Query
+    // * Highlight
+    // Boring

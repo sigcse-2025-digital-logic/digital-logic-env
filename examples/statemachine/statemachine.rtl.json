@@ -1,0 +1,176 @@
+{
+  "creator": "Yosys 0.57+260 (git sha1 f7120e9c2, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)",
+  "modules": {
+    "statemachine": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "statemachine.sv:1.1-30.10"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "reset": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "q": {
+          "direction": "output",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+        "$procdff$11": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "1",
+            "ARST_VALUE": "00",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "statemachine.sv:23.1-25.36"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 5, 6 ],
+            "Q": [ 7, 8 ]
+          }
+        },
+        "$procmux$6": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000010",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "statemachine.sv:16.28-16.28|statemachine.sv:15.5-20.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0" ],
+            "B": [ "0", "1", "1", "0" ],
+            "S": [ 9, 4 ],
+            "Y": [ 5, 6 ]
+          }
+        },
+        "$procmux$7_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "statemachine.sv:16.28-16.28|statemachine.sv:15.5-20.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7, 8 ],
+            "B": [ "1" ],
+            "Y": [ 9 ]
+          }
+        },
+        "$procmux$8_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "statemachine.sv:15.17-15.17|statemachine.sv:15.5-20.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7, 8 ],
+            "Y": [ 4 ]
+          }
+        }
+      },
+      "netnames": {
+        "$procmux$7_CMP": {
+          "hide_name": 1,
+          "bits": [ 9 ],
+          "attributes": {
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "statemachine.sv:2.17-2.20"
+          }
+        },
+        "nextstate": {
+          "hide_name": 0,
+          "bits": [ 5, 6 ],
+          "attributes": {
+            "enum_type": "$enum0",
+            "enum_value_00": "\\S0",
+            "enum_value_01": "\\S1",
+            "enum_value_10": "\\S2",
+            "src": "statemachine.sv:11.18-11.27",
+            "wiretype": "\\statetype"
+          }
+        },
+        "q": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "statemachine.sv:4.18-4.19"
+          }
+        },
+        "reset": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "statemachine.sv:3.17-3.22"
+          }
+        },
+        "state": {
+          "hide_name": 0,
+          "bits": [ 7, 8 ],
+          "attributes": {
+            "enum_type": "$enum0",
+            "enum_value_00": "\\S0",
+            "enum_value_01": "\\S1",
+            "enum_value_10": "\\S2",
+            "src": "statemachine.sv:11.11-11.16",
+            "wiretype": "\\statetype"
+          }
+        }
+      }
+    }
+  }
+}

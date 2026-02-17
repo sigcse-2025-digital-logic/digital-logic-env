@@ -7,6 +7,8 @@ module adder
     output logic [WIDTH-1:0] sum,
     output logic cout
 );
+    // ? In-class, Active Learning Exercise: https://washu-cse2600-fl25.github.io/studios/studio04b#multi-bit-addition
+
     // TODO: Create a WIDTH-bit ripple carry adder using the `fulladder` modules and `generate` loops
     // ! You must use structural modeling via instances of the `fulladder` from Homework 3A
     assign sum = 0;  // FIXME!

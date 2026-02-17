@@ -15,26 +15,26 @@
 #   A type of "edit" can be used to open the file in code.
 
 
-# label="5.1 Edit adder.sv" type=".edit"
+# label="X2.1 Edit adder.sv" type=".edit"
 adder.sv.edit:
 
-# label="5.2 Simulate adder.sv"
+# label="X2.2 Simulate adder.sv"
 products/adder.rtl.json: \
 	fulladder.sv \
 	adder.sv \
 
-# label="5.3 adder testbench verification"
+# label="X2.3 adder testbench verification"
 products/adder_tb.vcd: \
 	fulladder.sv \
 	adder.sv \
 	adder_tb.sv
 
-# label="5.4 adder iCE40 synthesis mapping"
+# label="X2.4 adder iCE40 synthesis mapping"
 products/adder.ice40.jpg: \
 	fulladder.sv \
  	adder.sv \
 
-# label="5.5 adder iCE40 bitstream"
+# label="X2.5 adder iCE40 bitstream"
 products/adder.bin: \
 	fulladder.sv \
  	adder.sv \
