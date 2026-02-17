@@ -1,13 +1,19 @@
 
-# Q1: Briefly summarize your work (what it is, how one uses it or interacts with it, etc.)
+<!-- Questions/prompts can be embedded in assignments. Answers can be embedded and utilize markdown for styling. -->
+
+# Q01: Briefly summarize how combinational logic can be expressed via Verilog
 
 TODO
 
-# Q2: How long did you spend on this?
+# Q02.01: Exlain the difference between combinational logic and sequential logic.
 
 TODO
 
-# Q3: What skills did this work help you develop or explore further?
+# Q02.02 Explain the role of the Verilog `always_ff`'s role in the example.
+
+TODO
+
+# Q03: What skills did this work help you develop or explore further?
 
 TODO
 

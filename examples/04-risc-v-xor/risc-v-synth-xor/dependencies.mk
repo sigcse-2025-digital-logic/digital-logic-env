@@ -27,25 +27,14 @@
 
 
 
-# Common global-level dependencies:
-
-# label="FPGA Image Server" type="server"
-server:
-
-# label="Rebuild Tasks" type="rebuild"
-rebuild:
-
-
-# Not needed here, but no harm...
-.PHONY: server rebuild
-
-# Projects are typically contained in a subdirectory
-# The "products" folders are hidden (by default due to the devcontainer.json configuration) and normally are
-# used to hold the files generated for a target.
+# label="04.12 RISC-V+xor_driver_hardware.s bitstream" dependsOn=["04.11 Convert xor_driver_hardware to ROM for iCE40 ROM"]
+products/riscvsingle.bin: \
+	top.sv \
+	ledandkey.sv \
+	pins.pcf \
+	../risc-v/riscvsingle.sv \
+	imem.sv \
+	dmem.sv \
+	io.sv
 
 
-# label="00.00 Review reademe.md" type=".edit"
-readme.md.edit:
-
-# label="00.01 Edit questions.md" type=".edit"
-questions.md.edit:

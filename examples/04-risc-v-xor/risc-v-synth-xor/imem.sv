@@ -4,7 +4,7 @@ module imem(input  logic [31:0] address,
   logic [31:0] ROM[0:255];
 
   initial
-      $readmemh("../xor-test/products/xor_driver_hardware.rom.txt",ROM);
+      $readmemh("../risc-v-xor-test/products/xor_driver_hardware.rom.txt",ROM);
 
   assign instruction = ROM[address[9:2]]; // word aligned
 

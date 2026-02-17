@@ -26,26 +26,15 @@
 #   The type="rebuild" can be usd to include a task for rebuilding the tasks themselves (still need to be refreshed)
 
 
+# label="03.01 Edit helloio.S" type=".edit"
+helloio.S.edit: \
 
-# Common global-level dependencies:
+# label="03.02 Run helloio.S" type=".riscv-sim" dependsOn="5.1 Edit helloio.S"
+helloio.S.riscv-sim:
 
-# label="FPGA Image Server" type="server"
-server:
-
-# label="Rebuild Tasks" type="rebuild"
-rebuild:
-
-
-# Not needed here, but no harm...
-.PHONY: server rebuild
-
-# Projects are typically contained in a subdirectory
-# The "products" folders are hidden (by default due to the devcontainer.json configuration) and normally are
-# used to hold the files generated for a target.
+# label="03.03 Rebuild helloio.S SOC Firmware"
+products/helloio.S.fw.bin: \
+	helloio.S
 
 
-# label="00.00 Review reademe.md" type=".edit"
-readme.md.edit:
 
-# label="00.01 Edit questions.md" type=".edit"
-questions.md.edit:

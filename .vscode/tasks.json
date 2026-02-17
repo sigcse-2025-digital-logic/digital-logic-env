@@ -41,200 +41,21 @@
             "command": "code ${workspaceFolder}//readme.md",
         },
         {
-            "label": "04.01 Edit riscvsingle.sv",
+            "label": "00.01 Edit questions.md",
             "type": "shell",
-            "command": "code ${workspaceFolder}/examples/risc-v-xor/risc-v/riscvsingle.sv",
-        },
-        {
-            "label": "4.2 RISC-V+xor_driver_hardware.s bitstream",
-            "type": "shell",
-            "command": "${workspaceFolder}/.devcontainer/makehdl products/riscvsingle.bin",
-            "options": {
-                "cwd": "${workspaceFolder}/examples/risc-v-xor/risc-v-synth-xor",
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "revealProblems": "onProblem",
-                "focus": false,
-                "panel": "dedicated",
-                "showReuseMessage": true,
-                "clear": true,
-            },
-            "problemMatcher": {
-                "base": "$yosys",
-                "owner": "riscvsingle: image",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}/examples/risc-v-xor/risc-v-synth-xor",
-                ],
-            },
-            "dependsOn": "\"4.1 Convert xor_driver_hardware to ROM for iCE40 ROM\"",
-            "dependsOrder": "sequence",
-        },
-        {
-            "label": "04.10 RISC-V xor Testbench",
-            "type": "shell",
-            "command": "${workspaceFolder}/.devcontainer/makehdl products/risc-v-xor-tb.vcd",
-            "options": {
-                "cwd": "${workspaceFolder}/examples/risc-v-xor/risc-v-xor-tb",
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "revealProblems": "onProblem",
-                "focus": false,
-                "panel": "dedicated",
-                "showReuseMessage": true,
-                "clear": true,
-            },
-            "problemMatcher": {
-                "base": "$vvp",
-                "owner": "risc-v-xor-tb: testbench",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}/examples/risc-v-xor/risc-v-xor-tb",
-                ],
-            },
-        },
-        {
-            "label": "04.11 Edit xor Testbench",
-            "type": "shell",
-            "command": "code ${workspaceFolder}/examples/risc-v-xor/risc-v-xor-tb/risc-v-xor-tb.sv",
-        },
-        {
-            "label": "02.01 Edit statemachine.sv",
-            "type": "shell",
-            "command": "code ${workspaceFolder}/examples/statemachine/statemachine.sv",
-        },
-        {
-            "label": "02.02 Simulate statemachine.sv",
-            "type": "shell",
-            "command": "${workspaceFolder}/.devcontainer/makehdl statemachine.rtl.json",
-            "options": {
-                "cwd": "${workspaceFolder}/examples/statemachine",
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "revealProblems": "onProblem",
-                "focus": false,
-                "panel": "dedicated",
-                "showReuseMessage": true,
-                "clear": true,
-            },
-            "problemMatcher": {
-                "base": "$yosys",
-                "owner": "statemachine: simulate",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}/examples/statemachine",
-                ],
-            },
-        },
-        {
-            "label": "02.03 Edit statemachine_tb.sv",
-            "type": "shell",
-            "command": "code ${workspaceFolder}/examples/statemachine/statemachine_tb.sv",
-        },
-        {
-            "label": "02.04 statemachine testbench verification",
-            "type": "shell",
-            "command": "${workspaceFolder}/.devcontainer/makehdl statemachine_tb.vcd",
-            "options": {
-                "cwd": "${workspaceFolder}/examples/statemachine",
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "revealProblems": "onProblem",
-                "focus": false,
-                "panel": "dedicated",
-                "showReuseMessage": true,
-                "clear": true,
-            },
-            "problemMatcher": {
-                "base": "$vvp",
-                "owner": "statemachine_tb: testbench",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}/examples/statemachine",
-                ],
-            },
-        },
-        {
-            "label": "02.05 statemachine iCE40 bitstream",
-            "type": "shell",
-            "command": "${workspaceFolder}/.devcontainer/makehdl products/statemachine.bin",
-            "options": {
-                "cwd": "${workspaceFolder}/examples/statemachine",
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "revealProblems": "onProblem",
-                "focus": false,
-                "panel": "dedicated",
-                "showReuseMessage": true,
-                "clear": true,
-            },
-            "problemMatcher": {
-                "base": "$yosys",
-                "owner": "statemachine: image",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}/examples/statemachine",
-                ],
-            },
-        },
-        {
-            "label": "03.01 Edit helloio.S",
-            "type": "shell",
-            "command": "code ${workspaceFolder}/examples/hello-risc-v/helloio.S",
-        },
-        {
-            "label": "03.02 Run helloio.S",
-            "type": "process",
-            "command": "${command:workbench.action.debug.start}",
-            "dependsOrder": "sequence",
-            "dependsOn": "\"5.1 Edit helloio.S\"",
-        },
-        {
-            "label": "03.03 Rebuild helloio.S SOC Firmware",
-            "type": "shell",
-            "command": "${workspaceFolder}/.devcontainer/makehdl products/helloio.S.fw.bin",
-            "options": {
-                "cwd": "${workspaceFolder}/examples/hello-risc-v",
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "revealProblems": "onProblem",
-                "focus": false,
-                "panel": "dedicated",
-                "showReuseMessage": true,
-                "clear": true,
-            },
-            "problemMatcher": {
-                "base": "$yosys",
-                "owner": "helloio.S: image",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}/examples/hello-risc-v",
-                ],
-            },
+            "command": "code ${workspaceFolder}//questions.md",
         },
         {
             "label": "01.01 Edit simple_comb.sv",
             "type": "shell",
-            "command": "code ${workspaceFolder}/examples/simple_comb/simple_comb.sv",
+            "command": "code ${workspaceFolder}/examples/01-simple_comb/simple_comb.sv",
         },
         {
             "label": "01.02 Simulate simple_comb.sv",
             "type": "shell",
             "command": "${workspaceFolder}/.devcontainer/makehdl products/simple_comb.rtl.json",
             "options": {
-                "cwd": "${workspaceFolder}/examples/simple_comb",
+                "cwd": "${workspaceFolder}/examples/01-simple_comb",
             },
             "presentation": {
                 "echo": true,
@@ -250,7 +71,7 @@
                 "owner": "simple_comb: simulate",
                 "fileLocation": [
                     "relative",
-                    "${workspaceFolder}/examples/simple_comb",
+                    "${workspaceFolder}/examples/01-simple_comb",
                 ],
             },
         },
@@ -259,7 +80,7 @@
             "type": "shell",
             "command": "${workspaceFolder}/.devcontainer/makehdl products/simple_comb_tb.vcd",
             "options": {
-                "cwd": "${workspaceFolder}/examples/simple_comb",
+                "cwd": "${workspaceFolder}/examples/01-simple_comb",
             },
             "presentation": {
                 "echo": true,
@@ -275,7 +96,7 @@
                 "owner": "simple_comb_tb: testbench",
                 "fileLocation": [
                     "relative",
-                    "${workspaceFolder}/examples/simple_comb",
+                    "${workspaceFolder}/examples/01-simple_comb",
                 ],
             },
         },
@@ -284,7 +105,7 @@
             "type": "shell",
             "command": "${workspaceFolder}/.devcontainer/makehdl products/simple_comb.bin",
             "options": {
-                "cwd": "${workspaceFolder}/examples/simple_comb",
+                "cwd": "${workspaceFolder}/examples/01-simple_comb",
             },
             "presentation": {
                 "echo": true,
@@ -300,101 +121,21 @@
                 "owner": "simple_comb: image",
                 "fileLocation": [
                     "relative",
-                    "${workspaceFolder}/examples/simple_comb",
-                ],
-            },
-        },
-        {
-            "label": "X2.1 Edit adder.sv",
-            "type": "shell",
-            "command": "code ${workspaceFolder}/examples/multibitadder/adder.sv",
-        },
-        {
-            "label": "X2.2 Simulate adder.sv",
-            "type": "shell",
-            "command": "${workspaceFolder}/.devcontainer/makehdl products/adder.rtl.json",
-            "options": {
-                "cwd": "${workspaceFolder}/examples/multibitadder",
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "revealProblems": "onProblem",
-                "focus": false,
-                "panel": "dedicated",
-                "showReuseMessage": true,
-                "clear": true,
-            },
-            "problemMatcher": {
-                "base": "$yosys",
-                "owner": "adder: simulate",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}/examples/multibitadder",
-                ],
-            },
-        },
-        {
-            "label": "X2.3 adder testbench verification",
-            "type": "shell",
-            "command": "${workspaceFolder}/.devcontainer/makehdl products/adder_tb.vcd",
-            "options": {
-                "cwd": "${workspaceFolder}/examples/multibitadder",
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "revealProblems": "onProblem",
-                "focus": false,
-                "panel": "dedicated",
-                "showReuseMessage": true,
-                "clear": true,
-            },
-            "problemMatcher": {
-                "base": "$vvp",
-                "owner": "adder_tb: testbench",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}/examples/multibitadder",
-                ],
-            },
-        },
-        {
-            "label": "X2.5 adder iCE40 bitstream",
-            "type": "shell",
-            "command": "${workspaceFolder}/.devcontainer/makehdl products/adder.bin",
-            "options": {
-                "cwd": "${workspaceFolder}/examples/multibitadder",
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "revealProblems": "onProblem",
-                "focus": false,
-                "panel": "dedicated",
-                "showReuseMessage": true,
-                "clear": true,
-            },
-            "problemMatcher": {
-                "base": "$yosys",
-                "owner": "adder: image",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}/examples/multibitadder",
+                    "${workspaceFolder}/examples/01-simple_comb",
                 ],
             },
         },
         {
             "label": "X1.11 Edit fulladder.sv",
             "type": "shell",
-            "command": "code ${workspaceFolder}/examples/fulladder/fulladder.sv",
+            "command": "code ${workspaceFolder}/examples/X1-fulladder/fulladder.sv",
         },
         {
             "label": "X1.12 Simulate fulladder.sv",
             "type": "shell",
             "command": "${workspaceFolder}/.devcontainer/makehdl products/fulladder.rtl.json",
             "options": {
-                "cwd": "${workspaceFolder}/examples/fulladder",
+                "cwd": "${workspaceFolder}/examples/X1-fulladder",
             },
             "presentation": {
                 "echo": true,
@@ -410,7 +151,7 @@
                 "owner": "fulladder: simulate",
                 "fileLocation": [
                     "relative",
-                    "${workspaceFolder}/examples/fulladder",
+                    "${workspaceFolder}/examples/X1-fulladder",
                 ],
             },
         },
@@ -419,7 +160,7 @@
             "type": "shell",
             "command": "${workspaceFolder}/.devcontainer/makehdl products/fulladder_tb.vcd",
             "options": {
-                "cwd": "${workspaceFolder}/examples/fulladder",
+                "cwd": "${workspaceFolder}/examples/X1-fulladder",
             },
             "presentation": {
                 "echo": true,
@@ -435,7 +176,303 @@
                 "owner": "fulladder_tb: testbench",
                 "fileLocation": [
                     "relative",
-                    "${workspaceFolder}/examples/fulladder",
+                    "${workspaceFolder}/examples/X1-fulladder",
+                ],
+            },
+        },
+        {
+            "label": "04.10 Edit xor_driver_hardware.s",
+            "type": "shell",
+            "command": "code ${workspaceFolder}/examples/04-risc-v-xor/risc-v-xor-test/xor_driver_hardware.s",
+        },
+        {
+            "label": "04.11 Convert xor_driver_hardware to ROM for iCE40 ROM",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl products/xor_driver_hardware.rom.txt",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/04-risc-v-xor/risc-v-xor-test",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$yosys",
+                "owner": "xor_driver_hardware: simulate",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/04-risc-v-xor/risc-v-xor-test",
+                ],
+            },
+        },
+        {
+            "label": "04.01 Edit riscvsingle.sv",
+            "type": "shell",
+            "command": "code ${workspaceFolder}/examples/04-risc-v-xor/risc-v/riscvsingle.sv",
+        },
+        {
+            "label": "04.12 RISC-V+xor_driver_hardware.s bitstream",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl products/riscvsingle.bin",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/04-risc-v-xor/risc-v-synth-xor",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$yosys",
+                "owner": "riscvsingle: image",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/04-risc-v-xor/risc-v-synth-xor",
+                ],
+            },
+            "dependsOn": [
+                "04.11 Convert xor_driver_hardware to ROM for iCE40 ROM",
+            ],
+            "dependsOrder": "sequence",
+        },
+        {
+            "label": "04.02 RISC-V xor Testbench",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl products/risc-v-xor-tb.vcd",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/04-risc-v-xor/risc-v-xor-tb",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$vvp",
+                "owner": "risc-v-xor-tb: testbench",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/04-risc-v-xor/risc-v-xor-tb",
+                ],
+            },
+        },
+        {
+            "label": "04.03 Edit xor Testbench",
+            "type": "shell",
+            "command": "code ${workspaceFolder}/examples/04-risc-v-xor/risc-v-xor-tb/risc-v-xor-tb.sv",
+        },
+        {
+            "label": "02.01 Edit statemachine.sv",
+            "type": "shell",
+            "command": "code ${workspaceFolder}/examples/02-statemachine/statemachine.sv",
+        },
+        {
+            "label": "02.02 Simulate statemachine.sv",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl statemachine.rtl.json",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/02-statemachine",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$yosys",
+                "owner": "statemachine: simulate",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/02-statemachine",
+                ],
+            },
+        },
+        {
+            "label": "02.03 Edit statemachine_tb.sv",
+            "type": "shell",
+            "command": "code ${workspaceFolder}/examples/02-statemachine/statemachine_tb.sv",
+        },
+        {
+            "label": "02.04 statemachine testbench verification",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl statemachine_tb.vcd",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/02-statemachine",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$vvp",
+                "owner": "statemachine_tb: testbench",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/02-statemachine",
+                ],
+            },
+        },
+        {
+            "label": "02.05 statemachine iCE40 bitstream",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl products/statemachine.bin",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/02-statemachine",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$yosys",
+                "owner": "statemachine: image",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/02-statemachine",
+                ],
+            },
+        },
+        {
+            "label": "03.01 Edit helloio.S",
+            "type": "shell",
+            "command": "code ${workspaceFolder}/examples/03-hello-risc-v/helloio.S",
+        },
+        {
+            "label": "03.02 Run helloio.S",
+            "type": "process",
+            "command": "${command:workbench.action.debug.start}",
+            "dependsOrder": "sequence",
+            "dependsOn": "\"5.1 Edit helloio.S\"",
+        },
+        {
+            "label": "03.03 Rebuild helloio.S SOC Firmware",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl products/helloio.S.fw.bin",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/03-hello-risc-v",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$yosys",
+                "owner": "helloio.S: image",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/03-hello-risc-v",
+                ],
+            },
+        },
+        {
+            "label": "X2.1 Edit adder.sv",
+            "type": "shell",
+            "command": "code ${workspaceFolder}/examples/X2-multibitadder/adder.sv",
+        },
+        {
+            "label": "X2.2 Simulate adder.sv",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl products/adder.rtl.json",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/X2-multibitadder",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$yosys",
+                "owner": "adder: simulate",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/X2-multibitadder",
+                ],
+            },
+        },
+        {
+            "label": "X2.3 adder testbench verification",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl products/adder_tb.vcd",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/X2-multibitadder",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$vvp",
+                "owner": "adder_tb: testbench",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/X2-multibitadder",
+                ],
+            },
+        },
+        {
+            "label": "X2.5 adder iCE40 bitstream",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl products/adder.bin",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/X2-multibitadder",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$yosys",
+                "owner": "adder: image",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/X2-multibitadder",
                 ],
             },
         },

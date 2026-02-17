@@ -27,25 +27,27 @@
 
 
 
-# Common global-level dependencies:
+# label="01.01 Edit simple_comb.sv" type=".edit"
+simple_comb.sv.edit:
 
-# label="FPGA Image Server" type="server"
-server:
+# label="01.02 Simulate simple_comb.sv"
+products/simple_comb.rtl.json: \
+	simple_comb.sv \
 
-# label="Rebuild Tasks" type="rebuild"
-rebuild:
-
-
-# Not needed here, but no harm...
-.PHONY: server rebuild
-
-# Projects are typically contained in a subdirectory
-# The "products" folders are hidden (by default due to the devcontainer.json configuration) and normally are
-# used to hold the files generated for a target.
+# label="01.03 simple_comb testbench verification"
+products/simple_comb_tb.vcd: \
+	simple_comb.sv \
+	simple_comb_tb.sv
 
 
-# label="00.00 Review reademe.md" type=".edit"
-readme.md.edit:
+# label="01.04 ice40 Bitstream"
+products/simple_comb.bin: \
+	simple_comb.sv \
+	top.sv \
+	ledandkey.sv \
+	pins.pcf
 
-# label="00.01 Edit questions.md" type=".edit"
-questions.md.edit:
+
+# # label="01.05 AIG Mapping"
+# products/simple_comb.aig.jpg: \
+# 	simple_comb.sv \

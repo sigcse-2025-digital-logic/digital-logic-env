@@ -26,26 +26,5 @@
 #   The type="rebuild" can be usd to include a task for rebuilding the tasks themselves (still need to be refreshed)
 
 
-
-# Common global-level dependencies:
-
-# label="FPGA Image Server" type="server"
-server:
-
-# label="Rebuild Tasks" type="rebuild"
-rebuild:
-
-
-# Not needed here, but no harm...
-.PHONY: server rebuild
-
-# Projects are typically contained in a subdirectory
-# The "products" folders are hidden (by default due to the devcontainer.json configuration) and normally are
-# used to hold the files generated for a target.
-
-
-# label="00.00 Review reademe.md" type=".edit"
-readme.md.edit:
-
-# label="00.01 Edit questions.md" type=".edit"
-questions.md.edit:
+# label="04.01 Edit riscvsingle.sv" type=".edit"
+riscvsingle.sv.edit: \

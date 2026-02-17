@@ -25,27 +25,11 @@
 #   The type="server" can be used to include a task for the FPGA server
 #   The type="rebuild" can be usd to include a task for rebuilding the tasks themselves (still need to be refreshed)
 
+# label="04.10 Edit xor_driver_hardware.s" type=".edit"
+xor_driver_hardware.s.edit: \
 
 
-# Common global-level dependencies:
+# label="04.11 Convert xor_driver_hardware to ROM for iCE40 ROM"
+products/xor_driver_hardware.rom.txt: \
+	xor_driver_hardware.s
 
-# label="FPGA Image Server" type="server"
-server:
-
-# label="Rebuild Tasks" type="rebuild"
-rebuild:
-
-
-# Not needed here, but no harm...
-.PHONY: server rebuild
-
-# Projects are typically contained in a subdirectory
-# The "products" folders are hidden (by default due to the devcontainer.json configuration) and normally are
-# used to hold the files generated for a target.
-
-
-# label="00.00 Review reademe.md" type=".edit"
-readme.md.edit:
-
-# label="00.01 Edit questions.md" type=".edit"
-questions.md.edit:

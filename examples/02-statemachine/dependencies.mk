@@ -27,25 +27,28 @@
 
 
 
-# Common global-level dependencies:
-
-# label="FPGA Image Server" type="server"
-server:
-
-# label="Rebuild Tasks" type="rebuild"
-rebuild:
+# label="02.01 Edit statemachine.sv" type=".edit"
+statemachine.sv.edit:
 
 
-# Not needed here, but no harm...
-.PHONY: server rebuild
 
-# Projects are typically contained in a subdirectory
-# The "products" folders are hidden (by default due to the devcontainer.json configuration) and normally are
-# used to hold the files generated for a target.
+# label="02.02 Simulate statemachine.sv"
+statemachine.rtl.json: \
+	statemachine.sv
+
+# label="02.03 Edit statemachine_tb.sv" type=".edit"
+statemachine_tb.sv.edit:
+
+# label="02.04 statemachine testbench verification"
+statemachine_tb.vcd: \
+	statemachine.sv \
+	statemachine_tb.sv
 
 
-# label="00.00 Review reademe.md" type=".edit"
-readme.md.edit:
-
-# label="00.01 Edit questions.md" type=".edit"
-questions.md.edit:
+# label="02.05 statemachine iCE40 bitstream"
+products/statemachine.bin: \
+	statemachine.sv \
+	top.sv \
+	ledandkey.sv \
+	risingedge_detector.sv \
+	pins.pcf

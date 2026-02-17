@@ -18,6 +18,8 @@ module simple_comb(
 // TODO:  1 1 0 | 0
 // TODO:  1 1 1 | 0
 // ! This should be super simple --- one line.  There's no need to simplify / etc.
+// ! Short tutorial on Verilog operators at: https://alchitry.com/tutorials/verilog/verilog-operators/
+// ! and expressions: https://verilogams.com/quickref/expressions.html
     assign y = a & b;  // FIXME
 
 endmodule

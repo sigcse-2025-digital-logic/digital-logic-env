@@ -19,7 +19,6 @@
 # A line preceeding a target that starts with a comment can "override" the type of target or the label used in the task
 #   With either/both label="..." or type="..." (Types include a dot for the extension, like .edit or .rtl.json)
 #   A type of "edit" can be used to open the file in code.
-# Task names that begin with an _ in their label will not be shown in the task list, but can still be dependencies.
 #
 # There are also global dependencies that can be used to launch common tasks independent of specific modules or projects:
 #   The type="server" can be used to include a task for the FPGA server
@@ -27,25 +26,22 @@
 
 
 
-# Common global-level dependencies:
-
-# label="FPGA Image Server" type="server"
-server:
-
-# label="Rebuild Tasks" type="rebuild"
-rebuild:
+# label="X1.11 Edit fulladder.sv" type=".edit"
+fulladder.sv.edit:
 
 
-# Not needed here, but no harm...
-.PHONY: server rebuild
+# label="X1.12 Simulate fulladder.sv"
+products/fulladder.rtl.json: \
+	fulladder.sv \
 
-# Projects are typically contained in a subdirectory
-# The "products" folders are hidden (by default due to the devcontainer.json configuration) and normally are
-# used to hold the files generated for a target.
+# label="X1.13 fulladder testbench verification"
+products/fulladder_tb.vcd: \
+	fulladder.sv \
+	fulladder_tb.sv
+
+# label="X1.17 fulladder AIG"
+products/fulladder.aig.jpg: \
+	fulladder.sv \
 
 
-# label="00.00 Review reademe.md" type=".edit"
-readme.md.edit:
 
-# label="00.01 Edit questions.md" type=".edit"
-questions.md.edit:
