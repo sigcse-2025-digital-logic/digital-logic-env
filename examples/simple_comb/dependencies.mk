@@ -15,21 +15,28 @@
 # A line preceeding a target that starts with a comment can "ovverride" the type of target or the label used in the task
 #   With either/both label="..." or type="..." (Types include a dot for the extension, like .edit or .rtl.json)
 #   A type of "edit" can be used to open the file in code.
+#   The attribute "hide" can be set to true (hide="true"), but this is not currently supported by all Task extensions
 
 
-# label="4.01 simple_comb testbench verification"
+# label="1.01 Edit simple_comb.sv" type=".edit"
+simple_comb.sv.edit:
+
+# label="1.02 Simulate simple_comb.sv"
+products/simple_comb.rtl.json: \
+	simple_comb.sv \
+
+# label="1.03 simple_comb testbench verification"
 products/simple_comb_tb.vcd: \
 	simple_comb.sv \
 	simple_comb_tb.sv
 
-# label="4.02 Edit simple_comb.sv" type=".edit"
-simple_comb.sv.edit:
+# # label="1.04 AIG Mapping"
+# products/simple_comb.aig.jpg: \
+# 	simple_comb.sv \
 
-# label="4.03 Simulate simple_comb.sv"
-products/simple_comb.rtl.json: \
+# label="1.04 ice40 Bitstream"
+products/simple_comb.bin: \
 	simple_comb.sv \
-
-# label="4.04 simple_comb AIG Mapping"
-products/simple_comb.aig.jpg: \
-	simple_comb.sv \
-
+	top.sv \
+	ledandkey.sv \
+	pins.pcf

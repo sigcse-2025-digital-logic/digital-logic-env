@@ -13,11 +13,56 @@ module adder
     assign cout = 0; // FIXME!
 
 
+
+endmodule
+   // ! Spoiler Alert solution below (scroll)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // ? Solution below:
     // logic [WIDTH:0] carry_in;
     // assign carry_in[0] = 1'b0;
 
-    // // Loop to instantiate adders
+    //    // Loop to instantiate adders
     // generate
     //     genvar i;
     //     for(i=0;i<WIDTH;i=i+1) begin : adder_gen
@@ -28,5 +73,3 @@ module adder
 
     // assign cout = carry_in[WIDTH];
 
-
-endmodule

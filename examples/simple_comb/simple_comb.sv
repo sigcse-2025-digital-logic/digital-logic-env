@@ -18,8 +18,44 @@ module simple_comb(
 // TODO:  1 1 0 | 0
 // TODO:  1 1 1 | 0
 // ! This should be super simple --- one line.  There's no need to simplify / etc.
-   assign y = a; // FIXME: Change this line to the correct expression!
+    assign y = a & b;  // FIXME
+
+endmodule
+    // ! Spoiler Alert solution below (scroll)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // ? Solution below:
     // assign y = ~a & ~b & c | a & ~b & ~c;
-endmodule
