@@ -66,7 +66,6 @@ Be sure to enter a commit message!
 * Hardware programming depends on Chromium-based browser (Chrome or Edge) for WebUSB
 * Some features depend on WebAssembly (Surfer, the waveform viewer and programming hardware)
 * Surfer (waveform viewer) depends on graphics card support.  Has issues with some Windows hardware/installations
-* DigitalJS simulations are not adapted for colorblindness
 
 # Acknowledgements
 
