@@ -4,6 +4,11 @@
 .globl ecall_proxy
 ecall_proxy:
     ecall
+    jr ra
+
+.globl ecall_proxy_test
+ecall_proxy_test:
+    ecall
     li t0, 0xBADBAD0
     li t1, 0xBADBAD1
     li t2, 0xBADBAD2

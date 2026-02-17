@@ -61,3 +61,4 @@ endmodule
 
     // ? Solution below:
     // assign y = ~a & ~b & c | a & ~b & ~c;
+    // OR structural:   ...  TODO / BSIEVER / FIXME

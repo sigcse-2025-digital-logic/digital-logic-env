@@ -275,6 +275,88 @@
             "command": "code ${workspaceFolder}/examples/04-risc-v-xor/risc-v-xor-tb/risc-v-xor-tb.sv",
         },
         {
+            "label": "05.01 Edit helloio.S",
+            "type": "shell",
+            "command": "code ${workspaceFolder}/examples/04-risc-v-xor/risc-v-helloio/helloio.S",
+        },
+        {
+            "label": "_Edit helloio simulate.S",
+            "type": "shell",
+            "command": "code ${workspaceFolder}/examples/04-risc-v-xor/risc-v-helloio/simulate.S",
+            "dependsOn": [
+                "05.01 Edit helloio.S",
+            ],
+            "dependsOrder": "sequence",
+        },
+        {
+            "label": "05.02 Simulate helloio.S",
+            "type": "process",
+            "command": "${command:workbench.action.debug.start}",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "_Edit helloio simulate.S",
+            ],
+        },
+        {
+            "label": "05.03 Edit helloio_driver.S",
+            "type": "shell",
+            "command": "code ${workspaceFolder}/examples/04-risc-v-xor/risc-v-helloio/helloio_driver.S",
+        },
+        {
+            "label": "05.04 Convert hellio.S+helloio_drive for iCE40 ROM",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl products/helloio.rom.txt",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/04-risc-v-xor/risc-v-helloio",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$yosys",
+                "owner": "helloio: simulate",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/04-risc-v-xor/risc-v-helloio",
+                ],
+            },
+        },
+        {
+            "label": "05.05 RISC-V+helloio.S bitstream",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl products/risc-v-helloio.bin",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/04-risc-v-xor/risc-v-helloio",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$yosys",
+                "owner": "risc-v-helloio: image",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/04-risc-v-xor/risc-v-helloio",
+                ],
+            },
+            "dependsOn": [
+                "05.04 Convert hellio.S+helloio_drive for iCE40 ROM",
+            ],
+            "dependsOrder": "sequence",
+        },
+        {
             "label": "02.01 Edit statemachine.sv",
             "type": "shell",
             "command": "code ${workspaceFolder}/examples/02-statemachine/statemachine.sv",
