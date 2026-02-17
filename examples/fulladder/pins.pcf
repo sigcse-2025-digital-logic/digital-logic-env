@@ -1,0 +1,11 @@
+set_io switch_3 42
+
+set_io switch_2 38
+
+set_io switch_1 28
+
+set_io led_nb 40
+
+set_io led_ng 39
+
+set_io led_nr 41
