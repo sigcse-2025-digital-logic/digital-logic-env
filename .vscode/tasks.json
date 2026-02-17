@@ -41,6 +41,68 @@
             "command": "code ${workspaceFolder}//readme.md",
         },
         {
+            "label": "04.01 Edit riscvsingle.sv",
+            "type": "shell",
+            "command": "code ${workspaceFolder}/examples/risc-v-xor/risc-v/riscvsingle.sv",
+        },
+        {
+            "label": "4.2 RISC-V+xor_driver_hardware.s bitstream",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl products/riscvsingle.bin",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/risc-v-xor/risc-v-synth-xor",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$yosys",
+                "owner": "riscvsingle: image",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/risc-v-xor/risc-v-synth-xor",
+                ],
+            },
+            "dependsOn": "\"4.1 Convert xor_driver_hardware to ROM for iCE40 ROM\"",
+            "dependsOrder": "sequence",
+        },
+        {
+            "label": "04.10 RISC-V xor Testbench",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl products/risc-v-xor-tb.vcd",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/risc-v-xor/risc-v-xor-tb",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$vvp",
+                "owner": "risc-v-xor-tb: testbench",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/risc-v-xor/risc-v-xor-tb",
+                ],
+            },
+        },
+        {
+            "label": "04.11 Edit xor Testbench",
+            "type": "shell",
+            "command": "code ${workspaceFolder}/examples/risc-v-xor/risc-v-xor-tb/risc-v-xor-tb.sv",
+        },
+        {
             "label": "02.01 Edit statemachine.sv",
             "type": "shell",
             "command": "code ${workspaceFolder}/examples/statemachine/statemachine.sv",

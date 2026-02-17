@@ -1,0 +1,1 @@
+../../../common/risc-v-synth/top.sv
