@@ -9,47 +9,50 @@ ecall_proxy:
   sw s2, 8(sp)
   sw s3, 12(sp)
 
-  li s0, 0x8000
+  # li s0, 0x8000  # no lui version
+  li s0, 0x8
+  slli s0, s0, 12
 
   li s1, 0x150
-  bne a0,s1, ecall_proxy_right_7segs
-ecall_proxy_leds:
+  beq a0,s1, ecall_proxy_writeleds
+  li s1, 0x151
+  beq a0,s1, ecall_proxy_readleds
+  li s1, 0x152
+  beq a0,s1, ecall_proxy_write_right_7segs
+  li s1, 0x153
+  beq a0,s1,ecall_proxy_read_right_7segs
+  li s1, 0x154
+  beq a0,s1, ecall_proxy_write_left_7segs
+  li s1, 0x155
+  beq a0,s1,ecall_proxy_write_left_7segs
+  li s1, 0x156
+  beq a0,s1,ecall_proxy_buttons
+
+ecall_proxy_writeleds:
   sw a1, 8(s0)
   j ecall_proxy_end
 
-ecall_proxy_right_7segs:
-  li s1, 0x152
-  bne a0,s1, ecall_proxy_left_7segs
+ecall_proxy_write_right_7segs:
   sw a1, 0(s0)
   j ecall_proxy_end
 
-ecall_proxy_left_7segs:
-  li s1, 0x154
-  bne a0,s1, ecall_proxy_buttons
+ecall_proxy_write_left_7segs:
   sw a1, 4(s0)
   j ecall_proxy_end
 
 ecall_proxy_buttons:
-  li s1, 0x156
-  bne a0,s1, ecall_proxy_readleds
   lw a0, 12(s0)
   j ecall_proxy_end
 
 ecall_proxy_readleds:
-  li s1, 0x151
-  bne a0,s1, ecall_proxy_readright_7segs
   lw a0, 8(s0)
   j ecall_proxy_end
 
-ecall_proxy_readright_7segs:
-  li s1, 0x153
-  bne a0,s1, ecall_proxy_readleft_7segs
+ecall_proxy_read_right_7segs:
   lw a0, 0(s0)
   j ecall_proxy_end
 
-ecall_proxy_readleft_7segs:
-  li s1, 0x155
-  bne a0,s1, ecall_proxy_end
+ecall_proxy_read_left_7segs:
   lw a0, 4(s0)
 
 ecall_proxy_end:

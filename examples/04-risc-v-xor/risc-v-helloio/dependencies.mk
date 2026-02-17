@@ -35,18 +35,14 @@ simulate.S.edit: \
 # label="05.02 Simulate helloio.S" type=".riscv-sim" dependsOn=["_Edit helloio simulate.S"]
 helloio_driver_sim.S.riscv-sim:
 
-# label="05.03 Edit helloio_driver.S" type=".edit"
-helloio_driver.S.edit: \
 
-# label="05.04 Convert hellio.S+helloio_drive for iCE40 ROM"
+# label="05.03 Convert hellio.S+bootloader for iCE40 ROM"
 products/helloio.rom.txt: \
 	../../../common/bootloader.S \
-	helloio_driver.S \
 	helloio.S \
-	../../../common/common_ice40.S \
 
 
-# label="05.05 RISC-V+helloio.S bitstream" dependsOn=["05.04 Convert hellio.S+helloio_drive for iCE40 ROM"]
+# label="05.04 RISC-V+helloio.S bitstream" dependsOn=["05.03 Convert hellio.S+bootloader for iCE40 ROM"]
 products/risc-v-helloio.bin: \
         top.sv \
         ledandkey.sv \
@@ -54,5 +50,6 @@ products/risc-v-helloio.bin: \
         ../risc-v/riscvsingle.sv \
         imem.sv \
         dmem.sv \
-        io.sv
+        io.sv \
+        helloio.S
 

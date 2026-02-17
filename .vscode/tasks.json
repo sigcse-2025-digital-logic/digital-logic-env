@@ -298,12 +298,7 @@
             ],
         },
         {
-            "label": "05.03 Edit helloio_driver.S",
-            "type": "shell",
-            "command": "code ${workspaceFolder}/examples/04-risc-v-xor/risc-v-helloio/helloio_driver.S",
-        },
-        {
-            "label": "05.04 Convert hellio.S+helloio_drive for iCE40 ROM",
+            "label": "05.03 Convert hellio.S+bootloader for iCE40 ROM",
             "type": "shell",
             "command": "${workspaceFolder}/.devcontainer/makehdl products/helloio.rom.txt",
             "options": {
@@ -328,7 +323,7 @@
             },
         },
         {
-            "label": "05.05 RISC-V+helloio.S bitstream",
+            "label": "05.04 RISC-V+helloio.S bitstream",
             "type": "shell",
             "command": "${workspaceFolder}/.devcontainer/makehdl products/risc-v-helloio.bin",
             "options": {
@@ -352,7 +347,7 @@
                 ],
             },
             "dependsOn": [
-                "05.04 Convert hellio.S+helloio_drive for iCE40 ROM",
+                "05.03 Convert hellio.S+bootloader for iCE40 ROM",
             ],
             "dependsOrder": "sequence",
         },
