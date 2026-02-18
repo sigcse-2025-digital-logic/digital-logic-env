@@ -1,6 +1,6 @@
 
 module statemachine_tb();
-    // ? Basec on an In-class, Active Learning Exercise: https://washu-cse2600-fl25.github.io/studios/studio04b#state-machines
+    // ? Based on an In-class, Active Learning Exercise: https://washu-cse2600-fl25.github.io/studios/studio04b#state-machines
     // ? (Test below is simplified)
 
     logic clk;

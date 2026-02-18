@@ -14,7 +14,7 @@
 // Implements a subset of the base integer instructions:
 //    lw, sw
 //    add, sub, and, or, slt,
-//    addi, andi, ori, slti
+//    addi, andi, ori, slti, slli
 //    beq
 //    jal
 // Exceptions, traps, and interrupts not implemented

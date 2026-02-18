@@ -25,8 +25,8 @@ mkdir -p $( dirname $1 )
 
 # Identify the type of target and react accordingly
 # If it's a type that runs the makefile and then opens the target
-if [[ $1 == *.aig.png ||
-      $1 == *.ice40.png ||
+if [[ $1 == *.aig.svg ||
+      $1 == *.ice40.svg ||
       $1 == *.ice40.dot  ||
       $1 == *.rom.txt ]]; then
     # Remove the old target

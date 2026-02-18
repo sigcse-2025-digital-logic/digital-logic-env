@@ -29,7 +29,7 @@
 # label="03.01 Edit helloio.S" type=".edit"
 helloio.S.edit: \
 
-# label="03.02 Run helloio.S" type=".riscv-sim" dependsOn="5.1 Edit helloio.S"
+# label="03.02 Run helloio.S" type=".riscv-sim" dependsOn=["03.01 Edit helloio.S"]
 helloio.S.riscv-sim:
 
 # label="03.03 Rebuild helloio.S SOC Firmware"

@@ -4,7 +4,7 @@
     "statemachine": {
       "attributes": {
         "top": "00000000000000000000000000000001",
-        "src": "statemachine.sv:1.1-30.10"
+        "src": "statemachine.sv:1.1-31.10"
       },
       "ports": {
         "clk": {
@@ -32,7 +32,7 @@
           },
           "attributes": {
             "always_ff": "00000000000000000000000000000001",
-            "src": "statemachine.sv:23.1-25.36"
+            "src": "statemachine.sv:24.1-26.36"
           },
           "port_directions": {
             "ARST": "input",
@@ -56,7 +56,7 @@
           },
           "attributes": {
             "full_case": "00000000000000000000000000000001",
-            "src": "statemachine.sv:16.28-16.28|statemachine.sv:15.5-20.12"
+            "src": "statemachine.sv:17.28-17.28|statemachine.sv:16.5-21.12"
           },
           "port_directions": {
             "A": "input",
@@ -83,7 +83,7 @@
           },
           "attributes": {
             "full_case": "00000000000000000000000000000001",
-            "src": "statemachine.sv:16.28-16.28|statemachine.sv:15.5-20.12"
+            "src": "statemachine.sv:17.28-17.28|statemachine.sv:16.5-21.12"
           },
           "port_directions": {
             "A": "input",
@@ -106,7 +106,7 @@
           },
           "attributes": {
             "full_case": "00000000000000000000000000000001",
-            "src": "statemachine.sv:15.17-15.17|statemachine.sv:15.5-20.12"
+            "src": "statemachine.sv:16.17-16.17|statemachine.sv:16.5-21.12"
           },
           "port_directions": {
             "A": "input",
@@ -140,7 +140,7 @@
             "enum_value_00": "\\S0",
             "enum_value_01": "\\S1",
             "enum_value_10": "\\S2",
-            "src": "statemachine.sv:11.18-11.27",
+            "src": "statemachine.sv:12.18-12.27",
             "wiretype": "\\statetype"
           }
         },
@@ -166,7 +166,7 @@
             "enum_value_00": "\\S0",
             "enum_value_01": "\\S1",
             "enum_value_10": "\\S2",
-            "src": "statemachine.sv:11.11-11.16",
+            "src": "statemachine.sv:12.11-12.16",
             "wiretype": "\\statetype"
           }
         }

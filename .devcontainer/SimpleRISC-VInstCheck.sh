@@ -10,7 +10,8 @@ input_file="$1"
 
 # Define the patterns to check for
 # TODO: Check work here.
-patterns="li|lui|j\s|nop|mv|neg|sltz|srl|sll|xor|beqz|bne|call|sgtzli|lw\s|sw|add\s|addi\s|sub|and|or|slt|andi|ori|slti|beq|jal\s|jalr|ret|auipc|not|zext.b"
+#patterns="li|lui|j\s|nop|mv|neg|sltz|srl|sll|xor|beqz|bne|call|sgtzli|lw\s|sw|add\s|addi\s|sub|and|or|slt|andi|ori|slti|beq|jal\s|jalr|ret|auipc|not|zext.b"
+patterns="li|j\s|nop|mv|neg|sltz|srl|sll|xor|beqz|bne|call|sgtzli|lw\s|sw|add\s|addi\s|sub|and|or|slt|andi|ori|slti|beq|jal\s|auipc|not|zext.b"
 # Set line number to 0
 line_number=0
 # Set error count to 0

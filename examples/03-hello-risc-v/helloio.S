@@ -17,7 +17,7 @@ loop:
     j loop
    # End the run
     li a0, 10
-    call ecall_proxy
+    ecall
     # ! Spoiler Alert solution below (scroll)
 
 

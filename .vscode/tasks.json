@@ -101,9 +101,34 @@
             },
         },
         {
-            "label": "01.04 ice40 Bitstream",
+            "label": "01.04 iCE40 Bitstream",
             "type": "shell",
             "command": "${workspaceFolder}/.devcontainer/makehdl products/simple_comb.bin",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/01-simple_comb",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$yosys",
+                "owner": "simple_comb: image",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/01-simple_comb",
+                ],
+            },
+        },
+        {
+            "label": "01.05 iCE40 placed",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl products/simple_comb.placed.svg",
             "options": {
                 "cwd": "${workspaceFolder}/examples/01-simple_comb",
             },
@@ -352,6 +377,31 @@
             "dependsOrder": "sequence",
         },
         {
+            "label": "05.05 RISC-V+helloio.S placed",
+            "type": "shell",
+            "command": "${workspaceFolder}/.devcontainer/makehdl products/risc-v-helloio.placed.svg",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/04-risc-v-xor/risc-v-helloio",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true,
+            },
+            "problemMatcher": {
+                "base": "$yosys",
+                "owner": "risc-v-helloio: image",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/examples/04-risc-v-xor/risc-v-helloio",
+                ],
+            },
+        },
+        {
             "label": "02.01 Edit statemachine.sv",
             "type": "shell",
             "command": "code ${workspaceFolder}/examples/02-statemachine/statemachine.sv",
@@ -446,7 +496,9 @@
             "type": "process",
             "command": "${command:workbench.action.debug.start}",
             "dependsOrder": "sequence",
-            "dependsOn": "\"5.1 Edit helloio.S\"",
+            "dependsOn": [
+                "03.01 Edit helloio.S",
+            ],
         },
         {
             "label": "03.03 Rebuild helloio.S SOC Firmware",

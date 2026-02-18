@@ -53,3 +53,13 @@ products/risc-v-helloio.bin: \
         io.sv \
         helloio.S
 
+# label="05.05 RISC-V+helloio.S placed"
+products/risc-v-helloio.placed.svg: \
+        top.sv \
+        ledandkey.sv \
+        pins.pcf \
+        ../risc-v/riscvsingle.sv \
+        imem.sv \
+        dmem.sv \
+        io.sv \
+        helloio.S

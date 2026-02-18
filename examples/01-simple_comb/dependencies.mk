@@ -5,12 +5,12 @@
 # Types of products are:
 #    *.rtl.json:  Simulation file
 #    *.vcd:  Value Change Dump (signal trace)
-#    *.ice40.jpg:  Ice40 synthesis
+#    *.ice40.jpg:  iCE40 synthesis
 #    *.aig.jpg:  AIG synthesis
 #    *.bin:  bitstream
 #    *.edit: Open the preceeding file for editing
 #    *.riscv-sim: Simulate the file (using launch.json view; Must config launch.json)
-#    *.ice40.dot: Ice40 synthesis in dot format
+#    *.ice40.dot: iCE40 synthesis in dot format
 #    *.rom.txt: Convert a single .s file to assembly format for RISC-V ROM (Does not sanity check; Will remove any lines between <RM> and </RM> tags)
 # Products still in alpha testing:
 #	 *.placed.svg : Placement data and file viewer (requires webserver be running to view)
@@ -40,7 +40,7 @@ products/simple_comb_tb.vcd: \
 	simple_comb_tb.sv
 
 
-# label="01.04 ice40 Bitstream"
+# label="01.04 iCE40 Bitstream"
 products/simple_comb.bin: \
 	simple_comb.sv \
 	top.sv \
@@ -48,6 +48,20 @@ products/simple_comb.bin: \
 	pins.pcf
 
 
-# # label="01.05 AIG Mapping"
+# label="01.05 AIG Mapping"
 # products/simple_comb.aig.jpg: \
 # 	simple_comb.sv \
+
+# label="01.05 iCE40 placed"
+products/simple_comb.placed.svg: \
+	simple_comb.sv \
+	top.sv \
+	ledandkey.sv \
+	pins.pcf
+
+# # label="01.06 iCE40 routed"
+# products/simple_comb.routed.svg: \
+# 	simple_comb.sv \
+# 	top.sv \
+# 	ledandkey.sv \
+# 	pins.pcf

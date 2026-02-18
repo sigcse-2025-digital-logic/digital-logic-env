@@ -79,15 +79,7 @@ Be sure to enter a commit message!
 
 * Better test benches / better unit testing
 * In-circuit Logic Analyzer
-
-
-# Misc Examples from fall 2024 course
-
-* [Studio](https://wustl-cse260m-fl24.github.io/studios/studio07a)
-* [Wiring](https://wustl-cse260m-fl24.github.io/studios/7/SwitchesRGB_bb.png)
-* [Studio / Wiring](https://wustl-cse260m-fl24.github.io/studios/studio07b)
-
-
+* Update waveform viewer
 
 
  // !  Alert:  Complete the code for a full adder (behavioral model!)
